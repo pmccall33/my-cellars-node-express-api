@@ -12,7 +12,7 @@ app.use(methodOverride('_method'));
 
 app.post('/trends', (req, res, next) => {
   try {
-  		console.log("----------------------------req.body--------------------------------")
+  		console.log("----------------------------req.body in /trends--------------------------------")
   		console.log(req.body);
   		const keyword_one = req.body.keyword_one;
   		const keyword_two = req.body.keyword_two;
@@ -20,7 +20,7 @@ app.post('/trends', (req, res, next) => {
 		googleTrends.interestOverTime({keyword: keyword_three})
 		.then(function(results){
 		  results = JSON.parse(results)
-  		  console.log("----------------------------results--------------------------------")
+  		  console.log("----------------------------results in /trends/winemaker--------------------------------")
 		  console.log(results);
 		  res.json(results)
 		})
@@ -35,7 +35,7 @@ app.post('/trends', (req, res, next) => {
 
 app.post('/trends/winemaker', (req, res, next) => {
   try {
-  		console.log("----------------------------req.body--------------------------------")
+  		console.log("----------------------------req.body in /trends/winemaker--------------------------------")
   		console.log(req.body);
   		const keyword_one = req.body.keyword_one;
   		const keyword_two = req.body.keyword_two;
@@ -43,7 +43,7 @@ app.post('/trends/winemaker', (req, res, next) => {
 		googleTrends.interestOverTime({keyword: keyword_one})
 		.then(function(results){
 		  results = JSON.parse(results)
-  		  console.log("----------------------------results--------------------------------")
+  		  console.log("----------------------------results in /trends/winemaker--------------------------------")
 		  console.log(results);
 		  res.json(results)
 		})
