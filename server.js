@@ -16,7 +16,31 @@ app.post('/trends', (req, res, next) => {
   		console.log(req.body);
   		const keyword_one = req.body.keyword_one;
   		const keyword_two = req.body.keyword_two;
-		googleTrends.interestOverTime({keyword: [keyword_one, keyword_two, 'natural wine']})
+  		const keyword_three = req.body.keyword_three;
+		googleTrends.interestOverTime({keyword: keyword_three})
+		.then(function(results){
+		  results = JSON.parse(results)
+  		  console.log("----------------------------results--------------------------------")
+		  console.log(results);
+		  res.json(results)
+		})
+		.catch(function(err){
+		  console.error(err);
+		});
+       
+  } catch (err) {
+    next(err);
+  }
+});
+
+app.post('/trends/winemaker', (req, res, next) => {
+  try {
+  		console.log("----------------------------req.body--------------------------------")
+  		console.log(req.body);
+  		const keyword_one = req.body.keyword_one;
+  		const keyword_two = req.body.keyword_two;
+  		const keyword_three = req.body.keyword_three;
+		googleTrends.interestOverTime({keyword: keyword_one})
 		.then(function(results){
 		  results = JSON.parse(results)
   		  console.log("----------------------------results--------------------------------")
