@@ -6,7 +6,8 @@ const bodyParser      = require('body-parser');
 const methodOverride  = require('method-override');
 const googleTrends = require('google-trends-api');
 
-app.use(bodyParser.urlencoded({extended: false}));
+// app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
 app.use(methodOverride('_method'));
 
 
