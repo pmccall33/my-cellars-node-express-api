@@ -14,7 +14,7 @@
     "express": "^4.16.4",
     "google-trends-api": "^4.9.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.4.17",
+    "mongoose": "^5.7.5",
     "parser": "^0.1.4"
   }
 }
