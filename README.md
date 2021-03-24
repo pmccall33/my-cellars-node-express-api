@@ -8,12 +8,14 @@
         keyword_three: "natural wine"
       }.to_json,
       headers: { 'Content-Type' => 'application/json' }
-    )```
+    )
+    ```
 
 
 
-*    ``` # get 4 ish years of trending data 'natural wine'
+*    ``` \# get 4 ish years of trending data 'natural wine'
     @wine_trends_data_one = []
-    data_points_one = (120..((post_req_one["default"]["timelineData"].length) - 1)).to_a```
+    data_points_one = (120..((post_req_one["default"]["timelineData"].length) - 1)).to_a
+    ```
 
 #### Developer - peter mccall murray
